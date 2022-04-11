@@ -1,0 +1,39 @@
+<nav class="navbar sticky-top navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <%= image_tag "navbar.png", class: "d-inline-block align-text-top", width: 30, height: 24 %>
+      Movie time
+    </a>
+    <span class="navbar-text">
+        <%= link_to "My List", lists_path, class: "btn btn-dark" %>
+      </span>
+  </div>
+</nav>
+
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Save any kind of <strong>movies</strong></h1>
+    <p>Classic</p>
+  </div>
+</div>
+
+
+<div class="list-container bg-dark py-3" >
+  <div class= "container">
+    <h2>My List</h2>
+    <div class = "bg-dark text-end">
+     <%= link_to "Create a movie list", new_list_path(@list), class: "btn btn-ghost" %>
+    </div>
+
+    <div class="row justify-content-center">
+      <% @lists.each do |list| %>
+        <div class="col-sm-6">
+          <div class="card-category" >
+            <%= link_to list.name, list_path(list), style: "text-decoration:none", class: "text-reset"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%# <%= f.input :image_url %>
+  <%= f.button :submit, class: "btn btn-flat" %>
+<% end %>
+
+<%= link_to "See the list", root_path, class: "btn btn-ghost" %>
